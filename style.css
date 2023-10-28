@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    background: url(Image_Editor\ \(31.6\).png);
+    background-repeat: no-repeat;
+    background-position: bottom 80% right 45%;
+}
+.season {
+	height: 25vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#myDiv {
+    height: 100vh;
+    overflow-y: auto;
+    background: linear-gradient(rgb(255, 255, 255),rgb(243, 160, 234));
+}
+
+p {
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Luckiest Guy", cursive;
+	font-size: 8rem;
+	letter-spacing: 0.7rem;
+	width: 100%;
+	height: 100%;
+	color: white;
+	text-align: center;
+	mix-blend-mode: multiply;
+	text-shadow: -5px 5px 0px black, -10px 10px 0px rgb(255, 161, 233), -20px 20px 0px rgb(0, 0, 0);
+}
+
+.one {
+    /* background-image: url(Image_Editor\ \(31.6\).png); */
+	background-position: bottom right;
+	background-size: cover;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+
+
+.gallery{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+
+}
+.box{
+    object-fit: cover;
+    position: relative;
+    filter: grayscale(100%);
+}
+.image{
+    width: 100%;
+    border-radius: 20px;
+    
+    box-shadow: 0 0 5px;
+}
+.image:hover{
+    
+    box-shadow: 20px;
+    scale: 1.03;
+    box-shadow: 0 0 20px;
+    opacity: 100%;
+    transition: 0.3s;
+}
+.box:hover{
+    filter: grayscale(0%);
+}
+figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg rgba(0,0,0,0.5) 0%,rgba(255,255,255));
+    transition: 0.5s;
+}
+figcaption:hover{
+    opacity: 1;
+    background-color: black;
+}
+.glow_on_hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.glow_on_hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow_on_hover:active {
+    color: #000
+}
+
+.glow_on_hover:active:after {
+    background: transparent;
+}
+
+.glow_on_hover:hover:before {
+    opacity: 1;
+}
+
+.glow_on_hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
